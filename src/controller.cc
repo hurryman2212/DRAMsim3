@@ -172,8 +172,6 @@ bool Controller::AddTransaction(Transaction trans) {
                 write_buffer_.push_back(trans);
             }
         }
-        trans.complete_cycle = clk_ + 1;
-        return_queue_.push_back(trans);
         return true;
     } else {  // read
         // if in write buffer, use the write buffer value
@@ -258,6 +256,8 @@ void Controller::IssueCommand(const Command &cmd) {
         }
         auto wr_lat = clk_ - it->second.added_cycle + config_.write_delay;
         simple_stats_.AddValue("write_latency", wr_lat);
+        it->second.complete_cycle = clk_ + config_.write_delay;
+        return_queue_.push_back(it->second);
         pending_wr_q_.erase(it);
     }
     // must update stats before states (for row hits)

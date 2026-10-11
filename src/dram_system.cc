@@ -34,6 +34,9 @@ int BaseDRAMSystem::GetChannel(uint64_t hex_addr) const {
 }
 
 void BaseDRAMSystem::PrintEpochStats() {
+    if (config_.output_level < 0) {
+        return;
+    }
     // first epoch, print bracket
     if (clk_ - config_.epoch_period == 0) {
         std::ofstream epoch_out(config_.json_epoch_name, std::ofstream::out);
@@ -51,6 +54,9 @@ void BaseDRAMSystem::PrintEpochStats() {
 }
 
 void BaseDRAMSystem::PrintStats() {
+    if (config_.output_level < 0) {
+        return;
+    }
     // Finish epoch output, remove last comma and append ]
     std::ofstream epoch_out(config_.json_epoch_name, std::ios_base::in |
                                                          std::ios_base::out |

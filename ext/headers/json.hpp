@@ -36,7 +36,7 @@ SOFTWARE.
 
 #include <algorithm> // all_of, find, for_each
 #include <cassert> // assert
-#include <ciso646> // and, not, or
+#include <iso646.h>  // and, not, or
 #include <cstddef> // nullptr_t, ptrdiff_t, size_t
 #include <functional> // hash, less
 #include <initializer_list> // initializer_list
@@ -264,8 +264,7 @@ using json = basic_json<>;
 
 // #include <nlohmann/detail/meta/cpp_future.hpp>
 
-
-#include <ciso646> // not
+#include <iso646.h>  // not
 #include <cstddef> // size_t
 #include <type_traits> // conditional, enable_if, false_type, integral_constant, is_constructible, is_integral, is_same, remove_cv, remove_reference, true_type
 
@@ -329,8 +328,7 @@ constexpr T static_const<T>::value;
 
 // #include <nlohmann/detail/meta/type_traits.hpp>
 
-
-#include <ciso646> // not
+#include <iso646.h>  // not
 #include <limits> // numeric_limits
 #include <type_traits> // false_type, is_constructible, is_integral, is_same, true_type
 #include <utility> // declval
@@ -1188,7 +1186,7 @@ class other_error : public exception
 
 
 #include <array> // array
-#include <ciso646> // and
+#include <iso646.h>  // and
 #include <cstddef> // size_t
 #include <cstdint> // uint8_t
 
@@ -1267,7 +1265,7 @@ inline bool operator<(const value_t lhs, const value_t rhs) noexcept
 
 #include <algorithm> // transform
 #include <array> // array
-#include <ciso646> // and, not
+#include <iso646.h>  // and, not
 #include <forward_list> // forward_list
 #include <iterator> // inserter, front_inserter, end
 #include <map> // map
@@ -1641,8 +1639,7 @@ constexpr const auto& from_json = detail::static_const<detail::from_json_fn>::va
 
 // #include <nlohmann/detail/conversions/to_json.hpp>
 
-
-#include <ciso646> // or, and, not
+#include <iso646.h>  // or, and, not
 #include <iterator> // begin, end
 #include <tuple> // tuple, get
 #include <type_traits> // is_same, is_constructible, is_floating_point, is_enum, underlying_type
@@ -5608,8 +5605,7 @@ template<typename BasicJsonType> struct internal_iterator
 
 // #include <nlohmann/detail/iterators/iter_impl.hpp>
 
-
-#include <ciso646> // not
+#include <iso646.h>  // not
 #include <iterator> // iterator, random_access_iterator_tag, bidirectional_iterator_tag, advance, next
 #include <type_traits> // conditional, is_const, remove_const
 
@@ -9812,7 +9808,7 @@ class binary_writer
 #include <algorithm> // reverse, remove, fill, find, none_of
 #include <array> // array
 #include <cassert> // assert
-#include <ciso646> // and, or
+#include <iso646.h>  // and, or
 #include <clocale> // localeconv, lconv
 #include <cmath> // labs, isfinite, isnan, signbit
 #include <cstddef> // size_t, ptrdiff_t
@@ -9828,7 +9824,7 @@ class binary_writer
 
 
 #include <cassert> // assert
-#include <ciso646> // or, and, not
+#include <iso646.h>  // or, and, not
 #include <cmath>   // signbit, isfinite
 #include <cstdint> // intN_t, uintN_t
 #include <cstring> // memcpy, memmove
